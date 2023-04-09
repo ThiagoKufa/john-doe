@@ -1,0 +1,77 @@
+:root {
+  --s1: 3px;
+  --s2: 6px;
+  --s3: 12px;
+  --s4: 24px;
+  --s5: 48px;
+  --s6: 96px;
+  --s7: 192px;
+  --s8: 384px;
+  --s9: 768px;
+  --s10: 1536px;
+
+  --border-radius-s: 3px;
+  --border-radius-m: 9px;
+  --border-radius-l: 16px;
+  --border-radius-xl: 24px;
+  --border-radius-full: 50%;
+
+  --z-index-1: 1;
+  --z-index-2: 10;
+  --z-index-3: 100;
+
+  --color-primary: #1a7f64;
+  --color-text-primary: #ffffff;
+  --color-secondary: #6c757d;
+  --color-text-secondary: #ffffff;
+  --color-success: #28a745;
+  --color-danger: #dc3545;
+  --color-warning: #ffc107;
+  --color-info: #17a2b8;
+  --color-text: #353740;
+  --color-bg: #f8f9fa;
+  --color-border: #dcdcdc;
+}
+:focus {
+  outline: transparent;
+  box-shadow: 0 0 0 2px var(--green-500);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.1px;
+  line-height: 1.7;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  width: 100dvw;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+button {
+  border: none;
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
