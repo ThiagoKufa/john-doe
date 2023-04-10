@@ -1,12 +1,9 @@
 FROM node:14-slim
-
 WORKDIR /usr/src/app
-
 COPY ./package.json ./
-
-RUN npm i
+RUN yarn install
 
 COPY . .
-
 EXPOSE 3030
-CMD [ "npm", "run", "start" ]
+
+CMD [ "yarn", "dev" ]

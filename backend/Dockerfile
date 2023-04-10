@@ -4,9 +4,7 @@ WORKDIR ${WORKDIR}
 COPY ./package.json ./
 COPY ./package-lock.json ./
 COPY . .
-RUN npm ci
-RUN npm run build
+RUN yarn install
+RUN yarn build
 
-
-
-CMD [ "npm", "start" ]
+CMD [ "yarn", "start" ]
