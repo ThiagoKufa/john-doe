@@ -23,19 +23,11 @@
     docker-compose up -d --build
     ```
     
+  
     ```bash
-    cd: backend
+     prisma migrate deploy
     ```
-    
-    ```bash
-    npx prisma migrate Customer
-    ```
-    
-    Se der erro no “npx prisma migrate Customer” execute:
-    
-    ```bash
-    npx prisma migrate reset
-    ```
+   
     
 3. URL dos containers:
     - backend: localhost:3000
