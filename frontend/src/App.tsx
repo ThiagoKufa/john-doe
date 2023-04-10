@@ -1,15 +1,12 @@
+import "./styles/app.css";
+import {CustomerForm} from './components/CustomerForm';
 
 function App() {
- 
-
-  return (
-    <div className="App">
-      <h1>
-        import './index.css'
-      </h1>
-    </div>
-  )
+  return <div className="app">
+    <CustomerForm />
+  </div>;
 }
 
-export default App
+export default App;
+
 

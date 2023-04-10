@@ -1,0 +1,44 @@
+version: "3"
+services:
+  react-app:
+    build:
+      context: ./frontend
+    stdin_open: true
+    ports: 
+      - "3030:3030"
+    networks:
+      - react-api
+
+  api-server:
+    build:
+      context: ./backend
+    restart: always
+    ports:
+      - "3000:3000"
+    networks:
+      - api-postgres
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres12344@postgres:5432/customer
+  
+  postgres:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    networks:
+      - api-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres12344
+      POSTGRES_DB: customer
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+networks:
+  react-api:
+    driver: bridge
+  api-postgres:
+    driver: bridge
+volumes:
+  postgres-data:
+    driver: local
