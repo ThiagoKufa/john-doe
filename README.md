@@ -6,7 +6,7 @@
 
 - Docker
 - Docker Composer
-- Gi
+- Git
 
 ### ****Instalação**** ⌨️
 
