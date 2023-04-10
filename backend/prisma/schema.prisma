@@ -16,4 +16,5 @@ model Customer {
   email         String
   favoriteColor String
   observation   String?
+  @@map("customers")
 }
