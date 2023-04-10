@@ -1,4 +1,5 @@
 # John Doe project
+[Arquivo documentação BDD](https://github.com/ThiagoKufa/john-doe/blob/master/docs/cliente.md)
 
 ## Como rodar o projeto. 💻
 
@@ -6,7 +7,7 @@
 
 - Docker
 - Docker Composer
-- Gi
+- Git
 
 ### ****Instalação**** ⌨️
 
