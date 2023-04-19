@@ -12,13 +12,13 @@ const customerController = new CustomerController(usecase);
 
 router.post("/create", (req:IRequest, res:IResponse) => {
   customerController.createCustomer(req, res);
+  
 });
 //rotas para testes se o banco está funcionando
-router.get("/teste", (req:IRequest, res:IResponse) => { 
-  repo.getAll().then((customers) => {
-    res.json(customers);
-  });
-  
+router.get("/customers", async (req:IRequest, res:IResponse) => { 
+  const { page, pageSize } = req.query;
+  const customers = await repo.getAll(page, pageSize);
+  res.json(customers);
 });
 
 export default router;

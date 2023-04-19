@@ -10,13 +10,14 @@ export class CustomerRepositoryImplementation implements ICustomerRepository {
   }
 
   async create(customerData: ICustomersData): Promise<ICustomersData> {
+    // Validar dados
+    if (!customerData.fullName || !customerData.cpf || !customerData.email) {
+      throw new Error("Invalid customer data");
+    }
+
     const createdCustomer = await this.prisma.customer.create({
       data: customerData,
     });
-  
-    if (!createdCustomer) {
-      throw new Error("Failed to create customer");
-    }
   
     return {
       id: createdCustomer.id,
@@ -28,10 +29,14 @@ export class CustomerRepositoryImplementation implements ICustomerRepository {
     };
   }
   
-  async getAll(): Promise<ICustomersData[]> {
-    const customers = await this.prisma.customer.findMany();
+  async getAll(page: number = 1, pageSize: number = 20): Promise<ICustomersData[]> {
+    const skip = (page - 1) * pageSize;
+    const customers = await this.prisma.customer.findMany({
+      skip,
+      take: pageSize,
+    });
     return customers;
   }
 
- 
+
 }
